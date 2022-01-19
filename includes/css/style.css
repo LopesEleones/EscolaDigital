@@ -1,7 +1,18 @@
-body {
+:root{
+     --default-color: #e7d03a;
+}
+
+body{
      font-family: Arial, Sans-Serif;
      margin: 0;
 }
+
+body, ul{
+     margin: 0;
+     padding: 0;
+}
+
+/* ÍNICIO TELA DE CARREGAMENTO */
 
 .splash{
      position: fixed;
@@ -31,18 +42,124 @@ body {
      transition: all 0.5s;
 }
 
+/* FIM TELA DE CARREGAMENTO */
+
+/* ÍNICIO CABEÇALHO */
+
 .header{
-     width: 100%;
-     background: #999;
-     height: 50px;
+    width: 100%;
+    background: var(--default-color);
+    height: 50px;
 }
  
 .header p{
-     float: right;
-     font-size: 1.2em;
-     margin: 13px;
-     color: #fff;
+    float: left;
+    font-size: 1.2em;
+    margin: 0;
+    margin-top: 5px;
+    color: #fff;
 }
+
+#header{
+     box-sizing: border-box;
+     height: 50px;
+     padding: 1rem;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+}
+
+#logo{
+     font-size: 1.5rem;
+     font-weight: bold;
+}
+
+/* FIM CABEÇALHO */
+
+/* INÍCIO MENU */
+
+/*#menu{
+     display: flex;
+     list-style: none;
+     gap: .5rem;
+}*/
+
+#btn-menu{
+     display: block;
+}
+
+#menu{
+     display: block;
+     position: absolute;
+     width: 100%;
+     top: 50px;
+     right: 0px;
+     background: var(--default-color);
+     transition: .6s;
+     z-index: 100;
+     height: 0px;
+     visibility: hidden;
+     overflow-y: hidden;
+}
+
+#nav.active #menu{
+     height: calc(100vh - 50px);
+     visibility: visible;
+     overflow-y: auto;
+}
+
+#menu li{
+     padding: 1rem 0;
+}
+
+#menu a{
+     font-size: 1.5rem;
+     padding: 1rem 0;
+     margin: 0 1rem;
+     border-bottom: 2px solid rgba(0, 0, 0, .05);
+}
+
+#btn-menu{
+     display: flex;
+     padding: .5rem 1rem;
+     font-size: 1rem;
+     border: none;
+     background: none;
+     cursor: pointer;
+     gap: .5rem;
+}
+
+#hamburger{
+     border-top: 2px solid;
+     width: 20px;
+}
+
+#hamburger::after, #hamburger::before{
+     content: '';
+     display: block;
+     width: 20px;
+     height: 2px;
+     background: currentColor;
+     margin-top: 5px;
+     outline: none;
+     transition: .3s;
+     position: relative;
+}
+
+#nav.active #hamburger{
+     border-top-color: transparent;
+}
+
+#nav.active #hamburger::before{
+     transform: rotate(135deg);
+}
+
+#nav.active #hamburger::after{
+     transform: rotate(-135deg);
+     top: -7px;
+}
+
+/* FIM MENU */
 
 .clearfix:before, .clearfix:after{
      content: "";
@@ -54,12 +171,13 @@ body {
 }
 
 a{
-     color:#0067ab;
+     color: black;
      text-decoration: none;
+     font-family: sans-serif;
 }
 
 a:hover{
-     text-decoration: underline;
+     cursor: pointer;
 }
 
 .form{
@@ -81,11 +199,11 @@ input[type='password'] {
 input[type='submit']{
      padding: 10px 25px 8px;
      color: #fff;
-     background-color:   #e7d03a;
+     background-color: var(--default-color);
      text-shadow: rgba(231,208,58,0.24) 0 1px 0;
      font-size: 16px;
      box-shadow: rgba(231,208,58,0.24) 0 2px 0 0 inset,#fff 0 1px 0 0;
-     border: 1px solid  #e7d03a; 
+     border: 1px solid var(--default-color); 
      border-radius: 2px;
      margin-top: 10px;
      cursor:pointer;

@@ -33,17 +33,17 @@ if (isset($_POST['nome'])){
 	$result = mysqli_query($con,$query) or die(mysql_error());
 	$rows = mysqli_num_rows($result);
 
-    if($rows==1){
+    if($rows == 1){
 
 	    $_SESSION['nome'] = $nome;
         // Redirect user to index.php
-	     header("Location: index.php");
+	    header("Location: index.php");
 
     } else{
 
 	    echo "<div class='form'>
-              <h3>Username/password is incorrect.</h3>
-              <br/>Click here to <a href='login.php'>Login</a></div>";
+              <h3>Nome/senha incorreto.</h3>
+              <br/><a href='login.php'>Voltar</a></div>";
 
 	}
 

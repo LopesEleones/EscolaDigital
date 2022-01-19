@@ -14,7 +14,9 @@ require('includes/config.php');
 </head>
 <body>
     <div class="splash">
-        <h1 class="fade-in"><?php echo $appname; ?></h1>
+        <h1 class="fade-in">
+            <?php echo $appname; ?>
+        </h1>
     </div>
 </body>
 
