@@ -2,6 +2,20 @@
 
 require('./includes/config.php');
 
+$nome = $_SESSION['nome'];
+
+$sql = "SELECT * FROM usuarios WHERE nome='$nome'";
+$buscar = mysqli_query($con,$sql);
+$dados = mysqli_fetch_array($buscar);
+
+$result=mysqli_num_rows($buscar);
+
+if ($result==1) {
+
+    $ra = $dados["ra"];
+
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +36,8 @@ require('./includes/config.php');
             </button>
             <ul id="menu" role="menu">
                 <li>
-                    <?php echo $_SESSION['nome']; ?>
+                    <?php echo $_SESSION['nome']; ?><br>
+                    RA: <?php echo $ra ?>
                 </li>
                 <li><a href="/">Configurações</a></li>
                 <li><a href="/">Ajuda</a></li>
