@@ -8,7 +8,7 @@ $sql = "SELECT * FROM usuarios WHERE nome='$nome'";
 $buscar = mysqli_query($con,$sql);
 $dados = mysqli_fetch_array($buscar);
 
-$result=mysqli_num_rows($buscar);
+$result = mysqli_num_rows($buscar);
 
 if ($result==1) {
 

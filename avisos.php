@@ -8,5 +8,6 @@
 </head>
 <body>
     <h1>Avisos</h1>
+    <a href="inseriraviso.php">Inserir aviso</a>
 </body>
 </html>

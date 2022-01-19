@@ -31,10 +31,13 @@ if (isset($_POST['nome'])){
 	//Checking is user existing in the database or not
     $query = "SELECT * FROM `usuarios` WHERE nome='$nome' and senha='".md5($senha)."'";
 	$result = mysqli_query($con,$query) or die(mysql_error());
+    $data = mysqli_fetch_array($result);
 	$rows = mysqli_num_rows($result);
 
     if($rows == 1){
 
+        $id = $data["id"];
+        $_SESSION['id'] = $id;
 	    $_SESSION['nome'] = $nome;
         // Redirect user to index.php
 	    header("Location: index.php");
