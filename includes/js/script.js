@@ -1,5 +1,3 @@
-// TELA DE CARREGAMENTO
-
 const splash = document.querySelector(".splash");
 
 document.addEventListener('DOMContentLoaded', (e)=>{
@@ -10,8 +8,6 @@ document.addEventListener('DOMContentLoaded', (e)=>{
 
 
 window.onload=function() {
-
-// MENU
 
 const btnMenu = document.getElementById('btn-menu');
 

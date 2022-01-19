@@ -35,6 +35,7 @@ if (isset($_REQUEST['titulo'])){
     <title>Document</title>
 </head>
 <body>
+    <?php include 'includes/components/header.php'; ?>
     <div class="form">
             <h1>Inserir aviso</h1>
             <form name="registration" action="" method="post">

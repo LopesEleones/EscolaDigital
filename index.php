@@ -23,9 +23,11 @@ if(!isset($_SESSION["nome"])){
 <body>
     <?php
         include 'includes/components/splash.php';
-        include 'includes/components/header.php' ;
+        include 'includes/components/header.php';
     ?>
-    <a href="avisos.php">Avisos</a>
+    <a href="avisos.php" class="index-card container">Avisos</a>
+    <a href="avisos.php" class="index-card container">Sobre Mim</a>
+
 </body>
 
 <script src="includes/js/script.js"></script>

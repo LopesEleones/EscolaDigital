@@ -28,7 +28,7 @@ if ($result==1) {
 </head>
 <body>
     <div class="header" id="header">
-        <a id="logo" href=""><?php echo $appname; ?></a>
+        <a id="logo" href="index.php"><?php echo $appname; ?></a>
         <nav id="nav">
             <p><?php echo $_SESSION["nome"]; ?></p>
             <button id="btn-menu" aria-label="Abrir Menu" aria-haspopup="true" aria-controls="menu" aria-expanded="false">

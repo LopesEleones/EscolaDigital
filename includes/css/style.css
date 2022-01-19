@@ -12,7 +12,6 @@ body, ul{
      padding: 0;
 }
 
-/* ÍNICIO TELA DE CARREGAMENTO */
 
 .splash{
      position: fixed;
@@ -42,9 +41,6 @@ body, ul{
      transition: all 0.5s;
 }
 
-/* FIM TELA DE CARREGAMENTO */
-
-/* ÍNICIO CABEÇALHO */
 
 .header{
     width: 100%;
@@ -74,9 +70,6 @@ body, ul{
      font-weight: bold;
 }
 
-/* FIM CABEÇALHO */
-
-/* INÍCIO MENU */
 
 /*#menu{
      display: flex;
@@ -159,7 +152,6 @@ body, ul{
      top: -7px;
 }
 
-/* FIM MENU */
 
 .clearfix:before, .clearfix:after{
      content: "";
@@ -212,6 +204,35 @@ input[type='submit']{
 input[type='submit']:hover {
      background-color: f0df74;
 }
+
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+    width: 95%;
+    margin-left: 9px;
+}
+   
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.index-card{
+     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+     transition: 0.3s;
+     border-radius: 5px;
+     width: 35%;
+     min-height: 100px;
+     margin-top: 10px;
+     margin-left: 15px;
+     display: inline-block;
+}
+   
+.container {
+    padding: 2px 16px;
+}
+
 
 @keyframes fadeIn{
      to{
