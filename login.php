@@ -40,6 +40,8 @@ if (isset($_POST['nomeoura'])){
         $_SESSION['id'] = $id;
         $nome = $data["nome"];
 	    $_SESSION['nome'] = $nome;
+        $nome_compelto = $data["nome_completo"];
+	    $_SESSION['nome_completo'] = $nome_completo;
         $tipo = $data["tipo"];
         $_SESSION['tipo'] = $tipo;
         setcookie($id);

@@ -16,6 +16,7 @@ $result = mysqli_num_rows($buscar);
 if ($result==1) {
 
     $nome = $dados["nome"];
+    $nome_completo = $dados["nome_completo"];
     $email = $dados["email"];
     $ra = $dados["ra"];
     $scl_id = $dados['scl_id'];
@@ -53,7 +54,7 @@ if ($resultescola==1) {
     <?php include 'includes/components/header.php'; ?>
     <div class="content">
     <h1>Sobre Mim</h1>
-    <h3>Nome: <?php echo $nome ?></h3>
+    <h3>Nome: <?php echo $nome_completo ?></h3>
     <h3>Email Institucional: <?php echo $email ?></h3>
     <h3>RA: <?php echo $ra ?></h3>
 

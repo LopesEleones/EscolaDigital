@@ -13,6 +13,7 @@ $result = mysqli_num_rows($buscar);
 if ($result==1) {
 
     $nome = $dados["nome"];
+    $nome_completo = $dados["nome_completo"];
     $ra = $dados["ra"];
     $img = $dados["img"];
 
@@ -50,7 +51,7 @@ if ($result==1) {
                             </div>
                         </div>
                     </form>
-                    <h3><?php echo $_SESSION['nome']; ?></h3>
+                    <h3><?php echo $nome_completo ?></h3>
                     <h3>RA: <?php echo $ra ?></h3>
                 </li>
                 <!--<li><a href="/">Configurações</a></li>
