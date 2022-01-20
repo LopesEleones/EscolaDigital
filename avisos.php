@@ -33,6 +33,7 @@ if ($result==1) {
 </head>
 <body>
     <?php include 'includes/components/header.php'; ?>
+    <div class="content">
     <h1>Avisos</h1>
     <?php if($tipo == 3 || 4) {
         ?> <a href="inseriraviso.php">Inserir aviso</a> <?php
@@ -45,6 +46,7 @@ if ($result==1) {
             <h4><b><?php echo $titulo; ?></b></h4><p><?php echo $data; ?></p>
             <p><?php echo $conteudo; ?><br></p>
         </div>
+    </div>
     </div>
 </body>
 </html>

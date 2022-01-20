@@ -25,8 +25,10 @@ if(!isset($_SESSION["nome"])){
         include 'includes/components/splash.php';
         include 'includes/components/header.php';
     ?>
+    <div class="content">
     <a href="avisos.php" class="index-card container">Avisos</a>
     <a href="sobremim.php" class="index-card container">Sobre Mim</a>
+    </div>
 
 </body>
 

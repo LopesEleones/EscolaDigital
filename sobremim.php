@@ -18,6 +18,24 @@ if ($result==1) {
     $nome = $dados["nome"];
     $email = $dados["email"];
     $ra = $dados["ra"];
+    $scl_id = $dados['scl_id'];
+
+}
+
+$sqlescola = "SELECT * FROM escolas WHERE id='$scl_id'";
+$buscarescola = mysqli_query($con,$sqlescola);
+$dadosescola = mysqli_fetch_array($buscarescola);
+
+$resultescola = mysqli_num_rows($buscarescola);
+
+if ($resultescola==1) {
+
+    $nomeescola = $dadosescola["nome"];
+    $enderecoescola = $dadosescola["endereco"];
+    $cidadeescola = $dadosescola["cidade"];
+    $estadoescola = $dadosescola["estado"];
+    $telefoneescola1 = $dadosescola["telefone_1"];
+    $telefoneescola2 = $dadosescola["telefone_2"];
 
 }
 
@@ -33,9 +51,19 @@ if ($result==1) {
 </head>
 <body>
     <?php include 'includes/components/header.php'; ?>
+    <div class="content">
     <h1>Sobre Mim</h1>
     <h3>Nome: <?php echo $nome ?></h3>
     <h3>Email Institucional: <?php echo $email ?></h3>
     <h3>RA: <?php echo $ra ?></h3>
+
+    <h1>Sobre Minha Escola</h1>
+    <h3>Nome: <?php echo $nomeescola ?></h3>
+    <h3>Endereço: <?php echo $enderecoescola ?></h3>
+    <h3>Cidade: <?php echo $cidadeescola ?></h3>
+    <h3>Estado: <?php echo $estadoescola ?></h3>
+    <h3>Telefone 1: <?php echo $telefoneescola1 ?></h3>
+    <h3>Telefone 2: <?php echo $telefoneescola2 ?></h3>
+    </div>
 </body>
 </html>

@@ -36,6 +36,7 @@ if (isset($_REQUEST['titulo'])){
 </head>
 <body>
     <?php include 'includes/components/header.php'; ?>
+    <div class="content">
     <div class="form">
             <h1>Inserir aviso</h1>
             <form name="registration" action="" method="post">
@@ -43,6 +44,7 @@ if (isset($_REQUEST['titulo'])){
                 <input type="text" name="conteudo" placeholder="Conteúdo" required />
                 <input type="submit" name="submit" value="Inserir" />
             </form>
+    </div>
     </div>
 </body>
 </html>

@@ -35,9 +35,9 @@ if ($result==1) {
                 <span id="hamburger"></span>
             </button>
             <ul id="menu" role="menu">
-                <li>
-                    <?php echo $_SESSION['nome']; ?><br>
-                    RA: <?php echo $ra ?>
+                <li id="info">
+                    <h3><?php echo $_SESSION['nome']; ?></h3>
+                    <h3>RA: <?php echo $ra ?></h3>
                 </li>
                 <li><a href="/">Configurações</a></li>
                 <li><a href="/">Ajuda</a></li>

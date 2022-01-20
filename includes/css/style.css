@@ -12,6 +12,10 @@ body, ul{
      padding: 0;
 }
 
+h3{
+     word-break: break-word;
+}
+
 
 .splash{
      position: fixed;
@@ -103,6 +107,11 @@ body, ul{
 
 #menu li{
      padding: 1rem 0;
+} 
+
+#menu li#info{
+    margin-left: 15px;
+    list-style: none;
 }
 
 #menu a{
@@ -152,6 +161,10 @@ body, ul{
      top: -7px;
 }
 
+
+.content{
+     padding: 10px;
+}
 
 .clearfix:before, .clearfix:after{
      content: "";
@@ -228,6 +241,10 @@ input[type='submit']:hover {
      margin-left: 15px;
      display: inline-block;
 }
+
+.index-card:hover {
+     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+ }
    
 .container {
     padding: 2px 16px;
