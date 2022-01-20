@@ -30,3 +30,7 @@ btnMenu.addEventListener('click', toggleMenu);
 btnMenu.addEventListener('touchstart', toggleMenu);
 
 }
+
+document.getElementById("imagem").onchange = function() {
+    document.getElementById('form').submit();
+}

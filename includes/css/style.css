@@ -161,6 +161,40 @@ h3{
      top: -7px;
 }
 
+.upload{
+     width: 125px;
+     position: relative;
+     margin: auto;
+}
+
+.upload img{
+     border-radius: 50%;
+     border: 8px solid #DCDCDC;
+}
+
+.upload .round{
+     position: absolute;
+     background: #00B4FF;
+     bottom: 0;
+     right: 0;
+     width: 32px;
+     height: 32px;
+     line-height: 33px;
+     text-align: center;
+     border-radius: 50%;
+     overflow: hidden;
+}
+
+.upload .round input[type="file"]{
+     position: absolute;
+     transform: scale(3);
+     opacity: 0;
+}
+
+input[type=file]::-webkit-file-upload-button{
+     cursor: pointer;
+}
+
 
 .content{
      padding: 10px;
@@ -260,4 +294,14 @@ input[type='submit']:hover {
 .fade-in{
      opacity: 0;
      animation: fadeIn 1s ease-in forwards;
+}
+
+@media(min-width: 500px){
+     li#info{
+          display: inline-flex;
+     }
+
+     .form{
+          width: 200px;
+     }
 }

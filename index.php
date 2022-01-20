@@ -22,7 +22,7 @@ if(!isset($_SESSION["nome"])){
 </head>
 <body>
     <?php
-        include 'includes/components/splash.php';
+        //include 'includes/components/splash.php';
         include 'includes/components/header.php';
     ?>
     <div class="content">

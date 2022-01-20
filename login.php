@@ -20,16 +20,16 @@ include 'includes/components/splash.php';
 session_start();
 
 // If form submitted, insert values into the database.
-if (isset($_POST['nome'])){
+if (isset($_POST['nomeoura'])){
 
     // removes backslashes
-	$nome = stripslashes($_REQUEST['nome']);
+	$nomeoura = stripslashes($_REQUEST['nomeoura']);
     //escapes special characters in a string
-	$nome = mysqli_real_escape_string($con,$nome);
+	$nomeoura = mysqli_real_escape_string($con,$nomeoura);
 	$senha = stripslashes($_REQUEST['senha']);
 	$senha = mysqli_real_escape_string($con,$senha);
 	//Checking is user existing in the database or not
-    $query = "SELECT * FROM `usuarios` WHERE nome='$nome' and senha='".md5($senha)."'";
+    $query = "SELECT * FROM `usuarios` WHERE nome='$nomeoura' or ra='$nomeoura' and senha='".md5($senha)."'";
 	$result = mysqli_query($con,$query) or die(mysql_error());
     $data = mysqli_fetch_array($result);
 	$rows = mysqli_num_rows($result);
@@ -38,9 +38,11 @@ if (isset($_POST['nome'])){
 
         $id = $data["id"];
         $_SESSION['id'] = $id;
+        $nome = $data["nome"];
 	    $_SESSION['nome'] = $nome;
         $tipo = $data["tipo"];
         $_SESSION['tipo'] = $tipo;
+        setcookie($id);
         // Redirect user to index.php
 	    header("Location: index.php");
 
@@ -58,7 +60,7 @@ if (isset($_POST['nome'])){
     <div class="form">
         <h1>Log In</h1>
         <form action="" method="post" name="login">
-            <input type="text" name="nome" placeholder="Username" required />
+            <input type="text" name="nomeoura" placeholder="Username" required />
             <input type="password" name="senha" placeholder="Password" required />
             <br>
             <input name="submit" type="submit" value="Login" />
