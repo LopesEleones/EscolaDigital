@@ -5,6 +5,7 @@ require('includes/config.php');
 session_start();
 
 $id = $_SESSION['id'];
+$tipo = $_SESSION['tipo'];
 
 $sql = "SELECT * FROM avisos WHERE crdr_id='$id'";
 $buscar = mysqli_query($con,$sql);
@@ -33,7 +34,11 @@ if ($result==1) {
 <body>
     <?php include 'includes/components/header.php'; ?>
     <h1>Avisos</h1>
-    <a href="inseriraviso.php">Inserir aviso</a>
+    <?php if($tipo == 3 || 4) {
+        ?> <a href="inseriraviso.php">Inserir aviso</a> <?php
+    } else {
+        // Nada
+    } ?>
 
     <div class="card">
         <div class="container">

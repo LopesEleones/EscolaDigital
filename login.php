@@ -39,6 +39,8 @@ if (isset($_POST['nome'])){
         $id = $data["id"];
         $_SESSION['id'] = $id;
 	    $_SESSION['nome'] = $nome;
+        $tipo = $data["tipo"];
+        $_SESSION['tipo'] = $tipo;
         // Redirect user to index.php
 	    header("Location: index.php");
 

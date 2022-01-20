@@ -26,7 +26,7 @@ if(!isset($_SESSION["nome"])){
         include 'includes/components/header.php';
     ?>
     <a href="avisos.php" class="index-card container">Avisos</a>
-    <a href="avisos.php" class="index-card container">Sobre Mim</a>
+    <a href="sobremim.php" class="index-card container">Sobre Mim</a>
 
 </body>
 
