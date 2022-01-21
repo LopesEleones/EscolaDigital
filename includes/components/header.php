@@ -67,8 +67,6 @@ if ($result==1) {
 <?php 
 
 if(isset($_FILES["imagem"]["nome"])) {
-    $id = $_POST["id"];
-    $nome = $_POST["nome"];
 
     $imageName = $_FILES["imagem"]["nome"];
     $imageSize = $_FILES["imagem"]["size"];
@@ -83,8 +81,8 @@ if(isset($_FILES["imagem"]["nome"])) {
     } elseif ($imageSize > 1200) {
         echo "<script>alert('Image Too Large');</script>";
     } else {
-        $newImageName = $name . " - " . date("Y.m.d") . " - " . date("h.i.sa"); // Generate new image name
-        $newImageName .= "." . $imageExtension;
+        $newImageName = $nome . " - " . date("Y.m.d") . " - " . date("h.i.sa"); // Generate new image name
+        $newImageName = "." . $imageExtension;
         $query = "UPDATE alunos SET img='$newImageName' WHERE id='$id'";
         mysqli_query($con,$query);
         move_uploaded_file($tmpName, './includes/img/' . $newImageName);

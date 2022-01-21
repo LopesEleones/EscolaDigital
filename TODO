@@ -1,1 +1,17 @@
-1- Adicionar sistema de RA, o aluno pode entrar com o Nome de Usuário ou RA, e depois no perfil aparece o RA do aluno
+1- Criar um sistema de Séries
+2- Melhorar o sistema de Avisos
+3- Criar sistema de Horários
+4- Criar o sistema do Refeitório
+5- Criar sistema de Boletim
+6- Criar sistema de Provas
+7- Adicionar os dados dos responsáveis
+8- Criar sistema de Jornal
+9- Criar sistema de Ocorrências
+10- Criar sistema de Matrículas
+11- Criar a página das Configurações
+12- Criar sistema de Conversas
+13- Criar sistemas para professores e diretores
+
+1- Como vai funcionar:
+O Diretor vai acessar a página de registro de alunos e colocar os dados nos campos
+No campo de série vai listar todas as séries existentes nas escolas, o diretor seleciona a série e o banco de dados vai armazenar na tabela alunos o id da série do aluno na tabela series, para conseguir buscar a série do aluno, o banco de dados vai ter que pegar o id da série do aluno na tabela alunos, consultar na tabela series e o id que for correspondente ele vai armazenar no cache a série do aluno

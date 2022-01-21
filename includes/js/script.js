@@ -34,3 +34,14 @@ btnMenu.addEventListener('touchstart', toggleMenu);
 document.getElementById("imagem").onchange = function() {
     document.getElementById('form').submit();
 }
+
+let input = document.getElementById('series')
+
+input.addEventListener('input', function(evt) {
+    let selector = document.querySelector('option[value="'+this.value+'"]')
+    if ( selector ) {
+        this.form.addEventListener('submit', function(evt) {
+            input.value = selector.getAttribute('data-value')
+        }, false)
+    }
+}, false)
