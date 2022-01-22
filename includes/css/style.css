@@ -14,6 +14,7 @@ body, ul{
 
 h3{
      word-break: break-word;
+     font-size: 1.4rem;
 }
 
 
@@ -112,6 +113,7 @@ h3{
 #menu li#info{
     margin-left: 15px;
     list-style: none;
+    text-align: center;
 }
 
 #menu a{
@@ -220,32 +222,38 @@ a:hover{
 }
 
 .form{
-     width: 300px;
+     width: 500px;
      margin: 0 auto;
 }
 
-input[type='text'], input[type='email'],
-input[type='password'] {
-     width: 200px;
+.form h1, .form p{
+     text-align: center;
+}
+
+input[type='text'], input[type='email'], input[type='password'] {
+     width: 100%;
      border-radius: 2px;
      border: 1px solid #CCC;
      padding: 10px;
      color: #333;
      font-size: 14px;
      margin-top: 10px;
+     margin-left: -10px;
 }
 
-input[type='submit']{
+input[type='submit'] {
      padding: 10px 25px 8px;
+     width: 104%;
      color: #fff;
      background-color: var(--default-color);
-     text-shadow: rgba(231,208,58,0.24) 0 1px 0;
+     text-shadow: rgb(231 208 58 / 24%) 0 1px 0;
      font-size: 16px;
-     box-shadow: rgba(231,208,58,0.24) 0 2px 0 0 inset,#fff 0 1px 0 0;
-     border: 1px solid var(--default-color); 
+     box-shadow: rgb(231 208 58 / 24%) 0 2px 0 0 inset, #fff 0 1px 0 0;
+     border: 1px solid var(--default-color);
      border-radius: 2px;
      margin-top: 10px;
-     cursor:pointer;
+     margin-left: -10px;
+     cursor: pointer;
 }
 
 input[type='submit']:hover {
@@ -282,7 +290,7 @@ input[type='submit']:hover {
    
 .container {
     padding: 2px 16px;
-    max-width: 120px;
+    max-width: 200px;
 }
 
 
@@ -297,13 +305,13 @@ input[type='submit']:hover {
      animation: fadeIn 1s ease-in forwards;
 }
 
-@media(min-width: 500px){
-     li#info{
-          display: inline-flex;
+@media(max-width: 500px){
+     #menu li#info {
+          text-align: inherit;
      }
 
      .form{
-          width: 200px;
+          width: 300px!important;
      }
 
      li#info h3{
@@ -311,6 +319,36 @@ input[type='submit']:hover {
      }
 
      .container{
-          max-width: 200px!important;
+          max-width: 120px!important;
+     }
+
+     .content h3{
+          font-size: 1.2rem;
+     }
+
+     input[type='text'], input[type='email'], input[type='password'] {
+          width: 100%;
+          border-radius: 2px;
+          border: 1px solid #CCC;
+          padding: 10px;
+          color: #333;
+          font-size: 14px;
+          margin-top: 10px;
+          margin-left: -10px;
+     }
+     
+     input[type='submit'] {
+          padding: 10px 25px 8px;
+          width: 107%;
+          color: #fff;
+          background-color: var(--default-color);
+          text-shadow: rgb(231 208 58 / 24%) 0 1px 0;
+          font-size: 16px;
+          box-shadow: rgb(231 208 58 / 24%) 0 2px 0 0 inset, #fff 0 1px 0 0;
+          border: 1px solid var(--default-color);
+          border-radius: 2px;
+          margin-top: 10px;
+          margin-left: -10px;
+          cursor: pointer;
      }
 }
