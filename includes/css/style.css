@@ -1,5 +1,6 @@
 :root{
      --default-color: #e7d03a;
+     --default-color-hover: #f0df74;
 }
 
 body{
@@ -257,7 +258,7 @@ input[type='submit'] {
 }
 
 input[type='submit']:hover {
-     background-color: f0df74;
+     background-color: var(--default-color-hover);
 }
 
 

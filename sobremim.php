@@ -19,6 +19,7 @@ if ($result==1) {
     $nome_completo = $dados["nome_completo"];
     $email = $dados["email"];
     $ra = $dados["ra"];
+    $nasc = $dados["nasc"];
     $scl_id = $dados['scl_id'];
 
 }
@@ -57,6 +58,7 @@ if ($resultescola==1) {
     <h3>Nome: <?php echo $nome_completo ?></h3>
     <h3>Email Institucional: <?php echo $email ?></h3>
     <h3>RA: <?php echo $ra ?></h3>
+    <h3>Data de Nascimento: <?php echo $nasc ?></h3>
 
     <h1>Sobre Minha Escola</h1>
     <h3>Nome: <?php echo $nomeescola ?></h3>
