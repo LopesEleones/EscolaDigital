@@ -59,7 +59,7 @@ if (isset($_POST['emailoura'])){
 } else{
 
 ?>
-    <div class="form">
+    <div class="form" id="formlogin">
         <h1>Entrar</h1>
         <form action="" method="post" name="login">
             <input type="text" name="emailoura" placeholder="Email Institucional ou RA" required />
