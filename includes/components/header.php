@@ -15,7 +15,7 @@ if ($result==1) {
     $nome = $dados["nome"];
     $nome_completo = $dados["nome_completo"];
     $ra = $dados["ra"];
-    $img = $dados["img"];
+    $img = $dados["avatar"];
 
 }
 
@@ -44,10 +44,10 @@ if ($result==1) {
                         <div class="upload">
                             <img src="./includes/img/<?php echo $img; ?>" width="125" height="125" title="<?php echo $img; ?>">
                             <div class="round">
-                                <input type="hidden" name="id" value="<?php echo $id; ?>">
-                                <input type="hidden" name="nome" <?php echo $nome; ?>>
-                                <input type="file" name="imagem" id="imagem" accept=".jpg, .jpeg, .png">
-                                <i class="fa fa-camera" style="color: #fff;"></i>
+                                <form method="POST" enctype="multipart/form-data"> 
+                                    <input type="file" name="pic" id="imagem" accept="image/*">
+                                    <i class="fa fa-camera" style="color: #fff;"></i>    
+                                </form>
                             </div>
                         </div>
                     </form>
@@ -66,28 +66,17 @@ if ($result==1) {
 
 <?php 
 
-if(isset($_FILES["imagem"]["nome"])) {
-
-    $imageName = $_FILES["imagem"]["nome"];
-    $imageSize = $_FILES["imagem"]["size"];
-    $tmpName = $_FILES["imagem"]["tmp_name"];
-
-    // Image validation
-    $validImageExtension = ['jpg', 'jpeg', 'png'];
-    $imageExtension = explode('.', $imageName);
-    $imageExtension = strtolower(end($imageExtension));
-    if(!in_array($imageExtension, $validImageExtension)) {
-        echo "<script>alert('Invalid Image Extension');</script>";
-    } elseif ($imageSize > 1200) {
-        echo "<script>alert('Image Too Large');</script>";
-    } else {
-        $newImageName = $nome . " - " . date("Y.m.d") . " - " . date("h.i.sa"); // Generate new image name
-        $newImageName = "." . $imageExtension;
-        $query = "UPDATE alunos SET img='$newImageName' WHERE id='$id'";
-        mysqli_query($con,$query);
-        move_uploaded_file($tmpName, './includes/img/' . $newImageName);
-    }
-}
+if(isset($_FILES['pic']))
+{
+    $ext = strtolower(substr($_FILES['pic']['name'],-4)); //Pegando extensão do arquivo
+    $new_name = date("Y.m.d-H.i.s") . $ext; //Definindo um novo nome para o arquivo
+    $dir = './includes/img/'; //Diretório para uploads 
+    move_uploaded_file($_FILES['pic']['tmp_name'], $dir.$new_name); //Fazer upload do arquivo
+    $query = "UPDATE usuarios SET avatar='$new_name' WHERE id='$id'";
+    mysqli_query($con,$query);
+    echo("Imagen enviada com sucesso!");
+    header('Location: index.php');
+} 
 
 ?>
 </html>
