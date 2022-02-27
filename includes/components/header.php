@@ -69,7 +69,7 @@ if ($result==1) {
 if(isset($_FILES['pic']))
 {
     $ext = strtolower(substr($_FILES['pic']['name'],-4)); //Pegando extensão do arquivo
-    $new_name = date("Y.m.d-H.i.s") . $ext; //Definindo um novo nome para o arquivo
+    $new_name = $nome . "-" . date("Y.m.d-H.i.s") . $ext; //Definindo um novo nome para o arquivo
     $dir = './includes/img/'; //Diretório para uploads 
     move_uploaded_file($_FILES['pic']['tmp_name'], $dir.$new_name); //Fazer upload do arquivo
     $query = "UPDATE usuarios SET avatar='$new_name' WHERE id='$id'";
