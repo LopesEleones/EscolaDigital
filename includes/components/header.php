@@ -74,7 +74,7 @@ if(isset($_FILES['pic']))
     move_uploaded_file($_FILES['pic']['tmp_name'], $dir.$new_name); //Fazer upload do arquivo
     $query = "UPDATE usuarios SET avatar='$new_name' WHERE id='$id'";
     mysqli_query($con,$query);
-    echo("Imagen enviada com sucesso!");
+    //echo("Imagen enviada com sucesso!");
     header('Location: index.php');
 } 
 

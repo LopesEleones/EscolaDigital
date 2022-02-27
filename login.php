@@ -44,6 +44,8 @@ if (isset($_POST['emailoura'])){
 	    $_SESSION['nome_completo'] = $nome_completo;
         $tipo = $data["tipo"];
         $_SESSION['tipo'] = $tipo;
+        $sclid = $data["scl_id"];
+        $_SESSION['scl_id'] = $sclid;
         setcookie($id);
         // Redirect user to index.php
 	    header("Location: index.php");

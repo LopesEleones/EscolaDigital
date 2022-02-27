@@ -5,9 +5,10 @@ require('includes/config.php');
 session_start();
 
 $id = $_SESSION['id'];
+$sclid = $_SESSION['scl_id'];
 $tipo = $_SESSION['tipo'];
 
-$sql = "SELECT * FROM avisos WHERE crdr_id='$id'";
+$sql = "SELECT * FROM avisos WHERE sr_id='$srid'";
 $buscar = mysqli_query($con,$sql);
 $dados = mysqli_fetch_array($buscar);
 
@@ -17,6 +18,11 @@ if ($result==1) {
 
     $titulo = $dados["titulo"];
     $conteudo = $dados["conteudo"];
+    $criadorid = $dados["crdr_id"];
+    $sqlcriador = "SELECT * FROM usuarios WHERE id='$criadorid'";
+    $buscarcriador = mysqli_query($con,$sqlcriador);
+    $dadoscriador = mysqli_fetch_array($buscarcriador);
+    $criador = $dadoscriador["nome_completo"];
     $data = $dados["data"];
 
 }
@@ -43,7 +49,7 @@ if ($result==1) {
 
     <div class="card">
         <div class="container">
-            <h4><b><?php echo $titulo; ?></b></h4><p><?php echo $data; ?></p>
+            <h4><b><?php echo $titulo; ?></b></h4><p><?php echo $data; ?> por <?php echo $criador ?></p>
             <p><?php echo $conteudo; ?><br></p>
         </div>
     </div>
