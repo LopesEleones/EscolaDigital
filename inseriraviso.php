@@ -15,7 +15,7 @@ if (isset($_REQUEST['titulo'])){
 	$titulo = mysqli_real_escape_string($con,$titulo); 
 	$conteudo = stripslashes($_REQUEST['conteudo']);
 	$conteudo = mysqli_real_escape_string($con,$conteudo);
-	$data = date("Y-m-d H:i:s");
+	$data = date("D/m/y H:i");
     $query = "INSERT into `avisos` (`crdr_id`, `titulo`, `conteudo`, `data`) VALUES ('$id', '$titulo', '$conteudo', '$data')";
     $result = mysqli_query($con,$query);
     if($result){
