@@ -360,4 +360,8 @@ input[type='submit']:hover {
           margin-left: -10px;
           cursor: pointer;
      }
+
+     .index-card{
+          width: 35%!important;
+     }
 }
